@@ -1,0 +1,6 @@
+{
+    "typescript.locale": "es",
+    "files.associations": {
+        "version.h": "c"
+    }
+}

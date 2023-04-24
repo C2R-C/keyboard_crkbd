@@ -26,6 +26,8 @@
 #pragma once
 // clang-format off
 
+#define KC_LANG2 QK_RALT
+
 enum qk_keycode_ranges {
 // Ranges
     QK_BASIC                       = 0x0000,
