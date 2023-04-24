@@ -6,3 +6,4 @@ OLED_ENABLE        = yes
 OLED_DRIVER        = SSD1306
 LTO_ENABLE         = yes
 
+QMK_DIR ?= /home/c2r/qmk_firmware/

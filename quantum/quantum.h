@@ -273,6 +273,9 @@ void unregister_code16(uint16_t code);
 void tap_code16(uint16_t code);
 void tap_code16_delay(uint16_t code, uint16_t delay);
 
+void matrix_scan_quantum(void);
+
+
 const char *get_numeric_str(char *buf, size_t buf_len, uint32_t curr_num, char curr_pad);
 const char *get_u8_str(uint8_t curr_num, char curr_pad);
 const char *get_u16_str(uint16_t curr_num, char curr_pad);

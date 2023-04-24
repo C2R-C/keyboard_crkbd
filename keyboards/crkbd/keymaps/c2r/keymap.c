@@ -3,6 +3,12 @@
 #include "keymap.h"
 #include "keymap_spanish.h"
 #include "keymap_dvp.h"
+#include "/home/c2r/qmk_firmware/quantum/backlight/backlight.h"
+#include "quantum.h"
+#include "backlight.h"
+#include "matrix.h"
+
+
 
 extern uint8_t is_master;
 
@@ -161,6 +167,37 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         )
 
 };
+
+
+void backlight_set(uint8_t level) {
+  if (level == 0) {
+    // Apagar la luz de fondo
+    backlight_disable();
+  } else {
+    // Configurar el nivel de brillo de la luz de fondo
+    backlight_level(level);
+    // Encender la luz de fondo
+    backlight_enable();
+  }
+}
+
+
+static void set_led(uint8_t usb_led) {
+  if (usb_led & (1<<USB_LED_CAPS_LOCK)) {
+    // Encienda la retroiluminación de la tecla cuando se presiona
+    backlight_set(BACKLIGHT_LEVELS);
+  } else {
+    // Apague la retroiluminación de la tecla cuando se suelta
+    backlight_set(0);
+  }
+}
+
+void matrix_scan_user(void) {
+  uint8_t usb_led = host_keyboard_leds();
+  set_led(usb_led);
+  matrix_scan_quantum();
+}
+
 
 #ifdef OLED_ENABLE
 oled_rotation_t oled_init_user(oled_rotation_t rotation) {
@@ -402,4 +439,4 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 }
 
-// #endif
+

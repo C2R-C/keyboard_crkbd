@@ -29,9 +29,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define QUICK_TAP_TERM 0
 #define TAPPING_TERM 300
 
-// Define letra enhe
-#define ALT_GR_N 0x100019e
-
 #define UNICODE_SELECTED_LANGUAGE  es
 
 
@@ -109,3 +106,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #    undef ENABLE_RGB_MATRIX_SOLID_SPLASH
 #    undef ENABLE_RGB_MATRIX_SOLID_MULTISPLASH
 #endif
+
+// Iluminacion por tecla pulsada
+#ifndef BACKLIGHT_PIN
+#define BACKLIGHT_PIN D1
+#endif
+
+#ifndef BACKLIGHT_LEVELS
+#define BACKLIGHT_LEVELS 3
+#endif
+
+
