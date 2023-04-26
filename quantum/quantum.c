@@ -593,3 +593,7 @@ void secure_hook_quantum(secure_status_t secure_status) {
     }
 }
 #endif
+
+void matrix_scan_quantum(void) {
+    // Tu código aquí
+}

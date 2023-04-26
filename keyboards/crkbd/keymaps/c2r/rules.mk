@@ -1,4 +1,4 @@
-RGBLIGHT_ENABLE    = no
+RGBLIGHT_ENABLE    = yes
 RGB_MATRIX_ENABLE  = yes
 MOUSEKEY_ENABLE    = no
 NKRO_ENABLE        = yes
