@@ -22,5 +22,6 @@ DEFAULT_FOLDER = crkbd/rev1
 RGBLIGHT_SUPPORTED = yes
 RGB_MATRIX_SUPPORTED = yes
 
-LDFLAGS += -L$(QMK_DIR)/tmk_core/protocol/lufa/libusb_class/ -L$(QMK_DIR)/tmk_core/common/ -L$(QMK_DIR)/tmk_core/protocol/lufa/ -L$(QMK_DIR)/tmk_core/keyboard/ -lkeyboard -lcommon -llufa -Wl,--gc-sections
+LDFLAGS += -L$(QMK_DIR)/tmk_core/protocol/lufa/libusb_class/ -L$(QMK_DIR)/tmk_core/common/ -L$(QMK_DIR)/tmk_core/protocol/lufa/ -L$(QMK_DIR)/tmk_core/keyboard/ -lkeyboard -lcommon -llufa -Wl,-Map=$(BUILD_DIR)/$(KEYBOARD).map -Wl,--gc-sections
 
+LDFLAGS += -L$(ROOT)/lib
